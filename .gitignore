@@ -1,0 +1,31 @@
+﻿# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Scratch files
+clean_structure.txt
+repo_structure.txt
+structure.txt
+RAQT Noise added.txt
+README_Noise.md
+
+# PDFs and extracted text
+*.pdf
+sentinel_framework_extracted.txt
+extract_pdf.py
+
+# VS Code
+*.code-workspace
+
+# Model binaries
+*.pkl
+
+# Test duplicates
+tests/run_all_tests check at 356 2nd may.py
+tests/run_all_tests check pass.py
+tests/run_all_tests check.py
