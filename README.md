@@ -67,18 +67,19 @@ python src/raqt/secure_raqt.py
 # Project Structure 
 ``` 
 ├── src/
-│   ├── ai/              # AI anomaly detection + PUF defense
-│   ├── auth/            # Zero-knowledge authentication
-│   ├── crypto/          # PQC: KEM, KDF, AES, Dilithium, ML-KEM
-│   ├── puf/             # SRAM, RO, Arbiter PUFs + fusion + fuzzy extractor
-│   ├── raqt/            # Secure RAQT protocol with AI integration
-│   └── security/        # Clone detection, timing attack mitigation
-├── tests/               # Comprehensive unit tests
-├── docs/                # Architecture, threat model, Sentinel Framework alignment
-├── examples/            # Demo scripts for AI modules
-├── configs/             # YAML configuration for different scenarios
-├── benchmarks/          # Performance benchmarking
-└── bob_sessions/        # IBM BOB development session logs
+│   ├── ai/                        # AI anomaly detection + PUF defense
+│   ├── auth/                      # Zero-knowledge authentication
+│   ├── crypto/                    # PQC: KEM, KDF, AES, Dilithium, ML-KEM
+│   ├── puf/                       # SRAM, RO, Arbiter PUFs + fusion + fuzzy extractor
+│   ├── raqt/                      # Secure RAQT protocol with AI integration
+│   └── security/                  # Clone detection, timing attack mitigation
+├── tests/                         # Comprehensive unit tests
+├── docs/                          # Architecture, threat model, Sentinel Framework alignment
+├── examples/                      # Demo scripts for AI modules
+├── configs/                       # YAML configuration for different scenarios
+├── benchmarks/                    # Performance benchmarking
+├── robust_anon_bit_transmission/  # Robust Anonymous Bit Transmission Framework 
+└── bob_sessions/                  # IBM BOB development session logs
 ```
 # Key Documentation
 
