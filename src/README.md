@@ -64,11 +64,11 @@ from src.ai.raqt_anomaly_detector import RAQTAnomalyDetector
 from src.ai.puf_modeling_defense import PUFModelingDefense
 ```
 **Hybrid PUF**
-```bash
+```python
 from src.puf.fusion import PUFFusion, FusionMethod
 ```
 **PQC Authentication**
-```bash
+``python
 from src.crypto.pqc import PQCAuthenticationProtocol
 ```
 **Dependencies**
