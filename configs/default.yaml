@@ -1,0 +1,156 @@
+# Default Configuration for RAQT Quantum Network
+# This is the base configuration that other configs inherit from
+
+version: "1.0"
+environment: "default"
+
+# Network Configuration
+network:
+  protocol: "RAQT"
+  quantum_channel:
+    enabled: true
+    error_correction: true
+    entanglement_verification: true
+  classical_channel:
+    enabled: true
+    encryption: "AES-256-GCM"
+    authentication: "mutual"
+
+# PUF Configuration
+puf:
+  # SRAM PUF Settings
+  sram:
+    enabled: true
+    cell_count: 2048
+    response_bits: 256
+    noise_level: 0.15
+    temperature_sensitivity: 0.02
+  
+  # Ring Oscillator PUF Settings
+  ro:
+    enabled: true
+    oscillator_pairs: 128
+    response_bits: 128
+    noise_level: 0.08
+    frequency_range: [100000000, 150000000]  # 100-150 MHz
+    measurement_time: 0.001  # 1ms
+  
+  # Arbiter PUF Settings
+  arbiter:
+    enabled: true
+    delay_stages: 64
+    response_bits: 64
+    noise_level: 0.11
+    delay_variation: 1.0e-12  # 1 picosecond
+    base_delay: 10.0e-12  # 10 picoseconds
+  
+  # PUF Fusion Settings
+  fusion:
+    enabled: true
+    algorithm: "weighted_average"  # Options: weighted_average, majority_voting, xor_fusion, concatenation, confidence_based
+    weights:
+      sram: 0.4
+      ro: 0.35
+      arbiter: 0.25
+  
+  # Fuzzy Extractor Settings
+  fuzzy_extractor:
+    enabled: true
+    error_correction: "BCH"
+    code_params:
+      n: 255
+      k: 131
+      t: 18
+
+# Post-Quantum Cryptography Configuration
+pqc:
+  # Dilithium Digital Signature
+  dilithium:
+    enabled: true
+    security_level: 3  # NIST Level 3 (192-bit quantum security)
+    mode: "Dilithium3"
+  
+  # ML-KEM Key Encapsulation
+  mlkem:
+    enabled: true
+    security_level: 3  # ML-KEM-768
+    mode: "ML-KEM-768"
+  
+  # Key Derivation
+  hkdf:
+    enabled: true
+    hash_algorithm: "SHA3-256"
+    salt_length: 32
+    info: "RAQT-PUF-PQC-v1.0"
+
+# Encryption Configuration
+encryption:
+  algorithm: "AES-256-GCM"
+  key_size: 256
+  nonce_size: 96
+  tag_size: 128
+  key_rotation_interval: 3600  # seconds (1 hour)
+
+# Authentication Configuration
+authentication:
+  method: "mutual"  # Options: mutual, server_only, client_only
+  zkp:
+    enabled: true
+    protocol: "schnorr"  # Options: schnorr, pedersen, range_proof, set_membership
+    challenge_size: 256
+  timeout: 30  # seconds
+
+# Security Monitoring
+monitoring:
+  # Tamper Detection
+  tamper_detection:
+    enabled: true
+    check_interval: 1.0  # seconds
+    threshold: 0.20  # 20% deviation triggers alert
+  
+  # Clone Detection
+  clone_detection:
+    enabled: true
+    methods:
+      - "inter_hamming"
+      - "intra_hamming"
+      - "entropy"
+      - "autocorrelation"
+      - "chi_square"
+    thresholds:
+      inter_hd: 0.50
+      intra_hd: 0.15
+      entropy: 7.0
+  
+  # Timing Attack Protection
+  timing_protection:
+    enabled: true
+    constant_time_ops: true
+    blinding: true
+    timing_analysis: false  # Enable for debugging only
+
+# Logging Configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/raqt.log"
+  max_size: 10485760  # 10 MB
+  backup_count: 5
+  console: true
+
+# Performance Configuration
+performance:
+  max_concurrent_connections: 100
+  buffer_size: 8192
+  timeout: 30
+  retry_attempts: 3
+  retry_delay: 1.0
+
+# Experimental Features
+experimental:
+  quantum_key_distribution: false
+  hardware_acceleration: false
+  distributed_puf: false
+  adaptive_noise: false
+
+# Made with Bob

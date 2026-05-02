@@ -1,0 +1,145 @@
+# Development Configuration
+# Optimized for local development and debugging
+
+version: "1.0"
+environment: "development"
+
+# Inherit from default and override specific settings
+extends: "default.yaml"
+
+# Network Configuration - Relaxed for development
+network:
+  protocol: "RAQT"
+  quantum_channel:
+    enabled: true
+    error_correction: true
+    entanglement_verification: false  # Disabled for faster testing
+  classical_channel:
+    enabled: true
+    encryption: "AES-256-GCM"
+    authentication: "mutual"
+
+# PUF Configuration - Reduced complexity for faster iteration
+puf:
+  sram:
+    enabled: true
+    cell_count: 1024  # Reduced for faster generation
+    response_bits: 128  # Reduced
+    noise_level: 0.10  # Lower noise for more stable testing
+    temperature_sensitivity: 0.01
+  
+  ro:
+    enabled: true
+    oscillator_pairs: 64  # Reduced
+    response_bits: 64  # Reduced
+    noise_level: 0.05  # Lower noise
+    frequency_range: [100000000, 150000000]
+    measurement_time: 0.001
+  
+  arbiter:
+    enabled: true
+    delay_stages: 32  # Reduced
+    response_bits: 32  # Reduced
+    noise_level: 0.08  # Lower noise
+    delay_variation: 1.0e-12
+    base_delay: 10.0e-12
+  
+  fusion:
+    enabled: true
+    algorithm: "weighted_average"
+    weights:
+      sram: 0.4
+      ro: 0.35
+      arbiter: 0.25
+  
+  fuzzy_extractor:
+    enabled: true
+    error_correction: "BCH"
+    code_params:
+      n: 255
+      k: 131
+      t: 18
+
+# PQC - Standard settings
+pqc:
+  dilithium:
+    enabled: true
+    security_level: 2  # Lower level for faster operations
+    mode: "Dilithium2"
+  
+  mlkem:
+    enabled: true
+    security_level: 2  # ML-KEM-512 for faster operations
+    mode: "ML-KEM-512"
+  
+  hkdf:
+    enabled: true
+    hash_algorithm: "SHA3-256"
+    salt_length: 32
+    info: "RAQT-PUF-PQC-DEV-v1.0"
+
+# Encryption
+encryption:
+  algorithm: "AES-256-GCM"
+  key_size: 256
+  nonce_size: 96
+  tag_size: 128
+  key_rotation_interval: 7200  # 2 hours (longer for dev)
+
+# Authentication
+authentication:
+  method: "mutual"
+  zkp:
+    enabled: true
+    protocol: "schnorr"
+    challenge_size: 128  # Reduced for faster testing
+  timeout: 60  # Longer timeout for debugging
+
+# Security Monitoring - Relaxed for development
+monitoring:
+  tamper_detection:
+    enabled: true
+    check_interval: 5.0  # Less frequent checks
+    threshold: 0.30  # More tolerant
+  
+  clone_detection:
+    enabled: true
+    methods:
+      - "inter_hamming"
+      - "entropy"  # Reduced methods for faster testing
+    thresholds:
+      inter_hd: 0.45  # More tolerant
+      intra_hd: 0.20
+      entropy: 6.0
+  
+  timing_protection:
+    enabled: true
+    constant_time_ops: true
+    blinding: true
+    timing_analysis: true  # Enabled for debugging
+
+# Logging - Verbose for development
+logging:
+  level: "DEBUG"  # Verbose logging
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/raqt_dev.log"
+  max_size: 52428800  # 50 MB
+  backup_count: 3
+  console: true
+
+# Performance - Relaxed limits
+performance:
+  max_concurrent_connections: 10  # Limited for local testing
+  buffer_size: 4096
+  timeout: 60
+  retry_attempts: 5
+  retry_delay: 2.0
+
+# Experimental Features - Enabled for testing
+experimental:
+  quantum_key_distribution: true
+  hardware_acceleration: false
+  distributed_puf: true
+  adaptive_noise: true
+
+# Made with Bob

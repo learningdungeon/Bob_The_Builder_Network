@@ -1,0 +1,165 @@
+# Testing Configuration
+# Optimized for automated testing and CI/CD pipelines
+
+version: "1.0"
+environment: "testing"
+
+extends: "default.yaml"
+
+# Network Configuration - Simplified for testing
+network:
+  protocol: "RAQT"
+  quantum_channel:
+    enabled: true
+    error_correction: true
+    entanglement_verification: false  # Faster testing
+  classical_channel:
+    enabled: true
+    encryption: "AES-256-GCM"
+    authentication: "mutual"
+
+# PUF Configuration - Minimal for fast testing
+puf:
+  sram:
+    enabled: true
+    cell_count: 512  # Minimal
+    response_bits: 64  # Minimal
+    noise_level: 0.05  # Low noise for predictable tests
+    temperature_sensitivity: 0.01
+  
+  ro:
+    enabled: true
+    oscillator_pairs: 32  # Minimal
+    response_bits: 32  # Minimal
+    noise_level: 0.03  # Low noise
+    frequency_range: [100000000, 150000000]
+    measurement_time: 0.0005  # Faster
+  
+  arbiter:
+    enabled: true
+    delay_stages: 16  # Minimal
+    response_bits: 16  # Minimal
+    noise_level: 0.05  # Low noise
+    delay_variation: 1.0e-12
+    base_delay: 10.0e-12
+  
+  fusion:
+    enabled: true
+    algorithm: "weighted_average"
+    weights:
+      sram: 0.4
+      ro: 0.35
+      arbiter: 0.25
+  
+  fuzzy_extractor:
+    enabled: true
+    error_correction: "BCH"
+    code_params:
+      n: 255
+      k: 131
+      t: 18
+
+# PQC - Minimal security for fast testing
+pqc:
+  dilithium:
+    enabled: true
+    security_level: 2  # Fastest
+    mode: "Dilithium2"
+  
+  mlkem:
+    enabled: true
+    security_level: 2  # Fastest
+    mode: "ML-KEM-512"
+  
+  hkdf:
+    enabled: true
+    hash_algorithm: "SHA3-256"
+    salt_length: 16  # Shorter
+    info: "RAQT-PUF-PQC-TEST-v1.0"
+
+# Encryption - Standard
+encryption:
+  algorithm: "AES-256-GCM"
+  key_size: 256
+  nonce_size: 96
+  tag_size: 128
+  key_rotation_interval: 86400  # 24 hours (no rotation during tests)
+
+# Authentication - Relaxed for testing
+authentication:
+  method: "mutual"
+  zkp:
+    enabled: true
+    protocol: "schnorr"
+    challenge_size: 64  # Minimal
+  timeout: 120  # Long timeout for CI/CD
+
+# Security Monitoring - Minimal for testing
+monitoring:
+  tamper_detection:
+    enabled: false  # Disabled for predictable tests
+    check_interval: 10.0
+    threshold: 0.50
+  
+  clone_detection:
+    enabled: true
+    methods:
+      - "inter_hamming"  # Single method for speed
+    thresholds:
+      inter_hd: 0.40  # Very tolerant
+      intra_hd: 0.25
+      entropy: 5.0
+  
+  timing_protection:
+    enabled: true
+    constant_time_ops: true
+    blinding: false  # Disabled for faster tests
+    timing_analysis: false
+
+# Logging - Test-friendly
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/raqt_test.log"
+  max_size: 10485760  # 10 MB
+  backup_count: 2
+  console: true
+
+# Performance - Optimized for test speed
+performance:
+  max_concurrent_connections: 5
+  buffer_size: 2048
+  timeout: 30
+  retry_attempts: 1  # No retries in tests
+  retry_delay: 0.1
+
+# Experimental Features - Disabled for stable testing
+experimental:
+  quantum_key_distribution: false
+  hardware_acceleration: false
+  distributed_puf: false
+  adaptive_noise: false
+
+# Testing-specific settings
+testing:
+  # Deterministic behavior
+  deterministic:
+    enabled: true
+    seed: 42  # Fixed seed for reproducible tests
+  
+  # Mock components
+  mocks:
+    quantum_channel: false
+    hardware_puf: false
+  
+  # Test data
+  test_data:
+    generate_on_startup: true
+    sample_size: 100
+  
+  # Coverage
+  coverage:
+    enabled: true
+    min_threshold: 80  # 80% coverage required
+
+# Made with Bob

@@ -1,0 +1,205 @@
+# Research Configuration
+# Optimized for academic research and experimentation
+
+version: "1.0"
+environment: "research"
+
+extends: "default.yaml"
+
+# Network Configuration - Full features for research
+network:
+  protocol: "RAQT"
+  quantum_channel:
+    enabled: true
+    error_correction: true
+    entanglement_verification: true
+  classical_channel:
+    enabled: true
+    encryption: "AES-256-GCM"
+    authentication: "mutual"
+
+# PUF Configuration - Configurable for experiments
+puf:
+  sram:
+    enabled: true
+    cell_count: 2048
+    response_bits: 256
+    noise_level: 0.15  # Can be varied for experiments
+    temperature_sensitivity: 0.02
+  
+  ro:
+    enabled: true
+    oscillator_pairs: 128
+    response_bits: 128
+    noise_level: 0.08
+    frequency_range: [100000000, 150000000]
+    measurement_time: 0.001
+  
+  arbiter:
+    enabled: true
+    delay_stages: 64
+    response_bits: 64
+    noise_level: 0.11
+    delay_variation: 1.0e-12
+    base_delay: 10.0e-12
+  
+  fusion:
+    enabled: true
+    algorithm: "weighted_average"  # Can be changed for experiments
+    weights:
+      sram: 0.4
+      ro: 0.35
+      arbiter: 0.25
+  
+  fuzzy_extractor:
+    enabled: true
+    error_correction: "BCH"
+    code_params:
+      n: 255
+      k: 131
+      t: 18
+
+# PQC - Standard for research
+pqc:
+  dilithium:
+    enabled: true
+    security_level: 3
+    mode: "Dilithium3"
+  
+  mlkem:
+    enabled: true
+    security_level: 3
+    mode: "ML-KEM-768"
+  
+  hkdf:
+    enabled: true
+    hash_algorithm: "SHA3-256"
+    salt_length: 32
+    info: "RAQT-PUF-PQC-RESEARCH-v1.0"
+
+# Encryption
+encryption:
+  algorithm: "AES-256-GCM"
+  key_size: 256
+  nonce_size: 96
+  tag_size: 128
+  key_rotation_interval: 3600
+
+# Authentication
+authentication:
+  method: "mutual"
+  zkp:
+    enabled: true
+    protocol: "schnorr"  # Can be changed for experiments
+    challenge_size: 256
+  timeout: 60
+
+# Security Monitoring - Full monitoring for research
+monitoring:
+  tamper_detection:
+    enabled: true
+    check_interval: 1.0
+    threshold: 0.20
+  
+  clone_detection:
+    enabled: true
+    methods:  # All methods for comprehensive analysis
+      - "inter_hamming"
+      - "intra_hamming"
+      - "entropy"
+      - "autocorrelation"
+      - "chi_square"
+    thresholds:
+      inter_hd: 0.50
+      intra_hd: 0.15
+      entropy: 7.0
+  
+  timing_protection:
+    enabled: true
+    constant_time_ops: true
+    blinding: true
+    timing_analysis: true  # Enabled for research
+
+# Logging - Detailed for research
+logging:
+  level: "DEBUG"  # Verbose for analysis
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s"
+  file: "logs/raqt_research.log"
+  max_size: 104857600  # 100 MB
+  backup_count: 10
+  console: true
+
+# Performance - Balanced
+performance:
+  max_concurrent_connections: 50
+  buffer_size: 8192
+  timeout: 60
+  retry_attempts: 3
+  retry_delay: 1.0
+
+# Experimental Features - All enabled for research
+experimental:
+  quantum_key_distribution: true
+  hardware_acceleration: true
+  distributed_puf: true
+  adaptive_noise: true
+
+# Research-specific settings
+research:
+  # Data collection
+  data_collection:
+    enabled: true
+    metrics:
+      - "puf_response_times"
+      - "error_rates"
+      - "hamming_distances"
+      - "entropy_values"
+      - "authentication_latency"
+      - "encryption_throughput"
+    output_format: "csv"
+    output_dir: "research_data"
+  
+  # Experiment tracking
+  experiments:
+    enabled: true
+    auto_save: true
+    save_interval: 300  # 5 minutes
+    metadata:
+      researcher: "TBD"
+      institution: "TBD"
+      project: "RAQT-PUF-PQC"
+  
+  # Statistical analysis
+  statistics:
+    enabled: true
+    confidence_level: 0.95
+    sample_size: 1000
+    bootstrap_iterations: 10000
+  
+  # Visualization
+  visualization:
+    enabled: true
+    auto_generate: true
+    formats:
+      - "png"
+      - "pdf"
+      - "svg"
+    dpi: 300
+  
+  # Reproducibility
+  reproducibility:
+    seed: null  # Set to integer for reproducible experiments
+    save_random_state: true
+    version_control: true
+  
+  # Parameter sweep
+  parameter_sweep:
+    enabled: false  # Enable for automated parameter exploration
+    parameters:
+      - name: "puf.sram.noise_level"
+        range: [0.05, 0.25]
+        steps: 20
+      - name: "puf.fusion.algorithm"
+        values: ["weighted_average", "majority_voting", "xor_fusion", "concatenation"]
+
+# Made with Bob

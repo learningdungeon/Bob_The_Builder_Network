@@ -1,0 +1,55 @@
+import netsquid as ns
+from netsquid.qubits import qubitapi as qapi
+from netsquid.qubits.operators import H, CNOT, Z
+
+def run_noisy_raqt(sender_id, secret_bit, gate_error=0.01, t1_t2_noise=0.02, shots=100):
+    """
+    Simulates RAQT protocol with hardware-inspired noise models.
+    gate_error: Probability of depolarizing error per gate operation.
+    t1_t2_noise: Probability of decoherence during the 'wait' phase.
+    """
+    success_count = 0
+    
+    for _ in range(shots):
+        # 1. Initialize 4-qubit GHZ state
+        qubits = qapi.create_qubits(4)
+        
+        # Apply H-gate with noise
+        qapi.operate(qubits[0], H)
+        qapi.depolarize(qubits[0], prob=gate_error)
+        
+        # Apply CNOTs with noise
+        for i in range(1, 4):
+            qapi.operate([qubits[0], qubits[i]], CNOT)
+            qapi.depolarize(qubits[i], prob=gate_error)
+
+        # 2. Simulate Channel/Memory Noise (The 'Waiting' Period)
+        for q in qubits:
+            qapi.depolarize(q, prob=t1_t2_noise)
+
+        # 3. Encoding (Sender applies Z if bit is 1)
+        if secret_bit == 1:
+            qapi.operate(qubits[sender_id], Z)
+            qapi.depolarize(qubits[sender_id], prob=gate_error)
+        
+        # 4. Basis Transformation (H-gates on all)
+        for q in qubits:
+            qapi.operate(q, H)
+            qapi.depolarize(q, prob=gate_error)
+        
+        # 5. Measurement and XOR Parity Reconstruction
+        xor_sum = 0
+        for q in qubits:
+            m, _ = qapi.measure(q)
+            xor_sum ^= m
+        
+        if xor_sum == secret_bit:
+            success_count += 1
+            
+    return success_count / shots
+
+# --- Reality-Based Execution ---
+print("--- RAQT Noise Analysis for LinkedIn Post ---")
+# Testing with 2% gate error and 5% channel decoherence
+reliability = run_noisy_raqt(sender_id=2, secret_bit=1, gate_error=0.02, t1_t2_noise=0.05)
+print(f"Protocol Fidelity under hardware noise: {reliability * 100:.2f}%")

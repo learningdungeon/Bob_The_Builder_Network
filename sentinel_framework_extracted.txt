@@ -1,0 +1,789 @@
+1 | 23  
+ Table of Contents  
+1. Executive Summary  
+Vision: Engineering Excellence & Physical Sovereignty  
+The "Sentinel" Mandate: A National Roadmap for Quantum Security  
+2. Existing Validation: Proven Foundation  
+RAQT Protocol – Validated on IBM & Origin Wuyuan (Chinese 
+Quantum Computer)  
+"Quantum for All" Curriculum – IBM QAMP 2025 (Grade 6 to Expert)  
+3. BS in Quantum Computing (BSQC): Core Curriculum  
+Program Narrative & Career Pathways  
+Proposed Scheme of Study (130 Credit Hours)  
+Sentinel -Integrated Semester Plan  
+4. MS in Quantum Systems Engineering (MS -QSE): Advanced 
+Infrastructure  
+The Transition from Simulation to Hardware Interfacing  
+Tier 1: Computational Foundations – HPC & NCQC Laboratory  
+Tier 2: Strategic Research Node  
+– Atomic Metrology & Gravimetry Lab (MOT/UHV)  
+5. Technical Accreditation & Global Benchmarking  
+Course Learning Outcomes (CLOs) & Washington Accord Alignment  
+Industrial & International Advisory Board (IIAB)  
+Global Career Pathways: Alignment with IBM, Google & CERN  
+6. Faculty Development & Training Roadmap  
+Phase 1: Foundations & Tool Fluency (Qiskit / Cirq)  
+Phase 2: Specialized Hardware Operations (MOT / Sensing)  
+Phase 3: Deep -Tech Innovation & Global Research  
+7. Implementation Roadmap & Investment  
+Phased Timeline (2026 –2030)  
+Estimated Infrastructure & Faculty Investment  
+Risk Assessment and Mitigation  
+8. National Research & Funding Pitch  
+Procurement Justification for Strategic Hardware  
+Economic Sovereignty: Building Pakistan's Indigenous Quantum 
+Industry   
+2 | 23  
+ EXECUTIVE SUMMARY:  
+ 
+The Sentinel Framework is a vision for quantum engineers dealing with the cusp of 
+algorithms and hardware. From cold atom gravimeters to unclonable hardware 
+fingerprints. So, our critical infrastructure is protected by gravity locked security 
+nodes and hardware root of trust – built by our own engineers, on our own terms.  
+The world stands at the threshold of the quantum era. The Q -Day is not a distant 
+phenomenon; it is here. Nations such as the US, China, and the EU are investing 
+billions to stay ahead in the quantum leap. Quantum hardware, cryptography, and 
+sensing are mov ing decisively beyond theoretical simulation toward physical 
+sovereignty.  
+Pakistan is not exceptional to this transition. We can either import quantum talent 
+or import hardware, or we can develop our own workforce capable of designing, 
+building, and securing quantum systems.  
+In response to the National Center for Quantum Computing (NCQC) call for 
+curriculum ideas, this proposal The Sentinel Framewor k is a specialized track for 
+the BS in Quantum Computing (BSQC) and the MS in Quantum Systems Engineering 
+(MS -QSE).  
+The very idea for the Sentinel Framework comes from validated work: the RAQT 
+protocol tested on IBM and Chinese quantum hardware  and the “Quantum for All” 
+4-tier curriculum (IBM QAMP 2025) . 
+The focus on software and hardware interfacing is the new approach adopted here , 
+infrastructure resilience and robust capabilities , considering that the physical layer 
+is where sovereignty begins. This is where our engineers  can leap ahead.  
+ 
+The Sentinel Mandate is a three -part roadmap:  
+(1) integrate PUF, metrology, and secure network electives into the BSQC program;  
+(2) establish two specialized labs (MOT/UHV for sensing, AWG/cryo for PUF);  
+(3) train faculty within 18 months.  
+ 
+This roadmap aligns with NCQC’s goal of producing industry -ready quantum 
+engineers.  
+ 
+ 
+ 
+3 | 23  
+ 2. Existing Validation: Proven Foundation  
+ 
+The Sentinel Framework is built on real work that I have already done.   
+ 
+ 
+RAQT Protocol – Tested on IBM and a Chinese Quantum Computer  and NetSquid 
+Simulation  
+ 
+RAQT stands for Robust Anonymous Quantum Transmission. It is my implementation of 
+the Christandl -Wehner 2004 protocol. The goal is simple: send one secret bit across a 
+quantum network without revealing who sent it. You use GHZ states, Z -gate encoding, 
+and X-basis measurements. Then you XOR the results. That gives you the bit.  
+I coded RAQT from scratch. First in Qiskit, then in NetSquid. Then I took it to real 
+hardware.  
+• IBM Quantum  – the protocol worked. Ideal simulation gave 100% success. With 
+1% depolarising noise, it still succeeded 97% of the time.  
+• Origin Wuyuan  – that is a quantum computer in China. I ran the same protocol 
+there. It worked too. Cross -platform validation.  
+The code, the simulation scripts, and the noise analysis are all on my GitHub. This work 
+directly feeds into the  Secure Quantum Networks  elective I am proposing. It also 
+proves that our students can go beyond simulators and run code on real machines , 
+even on hardware from different countries.  
+ 
+“Quantum for All” Curriculum – IBM QAMP 2025  
+“Quantum for All” is a 4 -tier quantum curriculum. I proposed it and led the project as 
+part of IBM QAMP (Qiskit Advocate Mentorship Program) 2025.  
+Here are the tiers:  
+• Tier 1 (grades 6 -8): stories, games, intuition. No  hard  math. Just curiosity.  
+• Tier 2 (grades 9 -11):  Bloch sphere, basic probability, visualisations.  
+• Tier 3 (undergraduate):  Qiskit programming, formal notation, simple 
+algorithms.  
+• Tier 4 (expert):  advanced protocols – no-cloning, EPR pairs, QKD, error 
+mitigation.  
+4 | 23  
+ The curriculum is aligned with STEM subjects. Physics teachers can teach quantum 
+through physics. Math teachers through matrices. Computer science teachers through 
+logic gates. I also added multilingual support – Roman English  and Spanish. The 
+pedagogy uses Bloom’s Taxonomy and the VAK learning model (visual, auditory, 
+kinesthetic).  
+We delivered everything on time. All pull requests were completed. The full framework 
+is documented.  
+Why does this matter for the Sentinel Framework? Because it gives us a ready -to-use 
+pedagogical model for the BSQC program.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5 | 23  
+  
+3. BS in Quantum Computing (BSQC): Core Curriculum  
+ 
+Program Narrative & Career Pathways  
+The BS in Quantum Computing at NCQC is a four -year degree (130 credit hours) that 
+trains engineers to understand quantum systems from the ground up – from the 
+mathematical foundations of Hilbert spaces to the physical implementation of qubits 
+on real hardware. The programme integrates AI/ML throughout , recognising that the 
+coming decade will demand graduates who can both use AI to control quantum 
+hardware and develop quantum algorithms to accelerate AI.  
+Global benchmarks inform this design.   
+Tsinghua University’s “Yao Class” founded by Turing Award winner Andrew Chi -Chih 
+Yao has, since 2005, nurtured undergraduates to compete with students from MIT, 
+Stanford and Princeton.  
+It offers three specialised tracks (Computer Science, Artificial Intelligence, and 
+Quantum Information) with a tiered model: the first two years focus on intensive 
+foundational training, the final two years on deep specialisation.    
+A comparable structure is found at the University of Science and Technology of China 
+(USTC), whose quantum information science programme combines physics 
+fundamentals (Quantum Mechanics I, Solid State Physics) with specialised 
+professional courses in quant um communication, quantum computation and quantum 
+precision measurement.   
+In the United States, Harvard’s Quantum Science & Engineering PhD programme sits at 
+the interface of physics, chemistry and engineering, providing students with 
+opportunities to explore the realisation and application of fully engineered quantum 
+systems.    
+MIT offers a sequence of graduate -level quantum information science courses that 
+cover density -matrix formalism, operator -sum representations, fault -tolerance and 
+quantum complexity theory.   UC Berkeley now even offers a course in which students 
+design and test quantum chips – a first -of-its-kind hands -on hardware experience.   
+ 
+ 
+ 
+ 
+ 
+6 | 23  
+ Proposed Scheme of Study (130 Credit Hours)  
+The curriculum follows the generic structure for computing degree programmes 
+approved by the Higher Education Commission of Pakistan and the Washington 
+Accord:  
+ 
+Area  Credit 
+Hours  Courses  
+Major (Computing) Core  46 14 
+Quantum Core  18 6 
+Domain Electives (including Sentinel 
+Track)  21 7 
+Mathematics & Supporting Courses  12 4 
+Elective Supporting                             
+(Professional Certification)  3 1 
+General Education Requirement  30 12 
+Total  130  44 
+ 
+This distribution mirrors international standards. USTC’s  quantum information science 
+BS also requires approximately 130 –140 credits, combining physics foundations with AI 
+and machine learning electives. Tsinghua’s Yao Class follows a “strong foundational 
+knowledge + interdisciplinary exploration” model, with sp ecialisations chosen after the 
+first academic year.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7 | 23  
+ Sentinel -Integrated Semester Plan  
+The three Sentinel electives : Hardware Root of Trust (PUF), Atomic Metrology & 
+Gravimetry, Secure Quantum Network  are distributed across Semesters 5 –7. Each 
+elective now includes explicit AI/ML modules that reflect the latest global trends (e.g., 
+neural -network quantum error correction, reinforcement learning for quantum control, 
+and AI -driven anomaly detection for q uantum networks).  
+ 
+ Year  Semester  Core Courses  Sentinel 
+Elective 
+(Choose 
+One)  AI/ML 
+Integration  
+1 Fall  • Programming 
+Fundamentals for QC,  
+• QR1 (Discrete Structures),  
+• ICT  
+• Functional English  – – 
+1 Spring  • Object Oriented & 
+Scientific Programming,  
+• Database Systems,  
+• Digital Logic Design,  
+• Multivariable Calculus, 
+Linear Algebra  – – 
+2 Fall  • Data Structures & 
+Complexity,  
+• Information Security,  
+• AI,  
+• Computer Networks, 
+Software Engineering, 
+Probability & Statistics  – AI 
+Fundamentals   
+(core AI course)  
+2 Spring  • Computer Organisation & 
+Assembly Language,  
+• Domain Core (Linear 
+Algebra for QC),  
+• Domain Core ( Quantum 
+Programming – 
+Qiskit/Cirq),  – – 
+8 | 23  
+  Year  Semester  Core Courses  Sentinel 
+Elective 
+(Choose 
+One)  AI/ML 
+Integration  
+• Natural Sciences (Applied 
+Physics),  
+• Expository Writing,  
+• Islamic Studies  
+3 Fall  • Operating Systems,  
+• Domain Core : (Quantum 
+Information Theory),  
+• Domain Core : (Quantum 
+Mechanics for 
+Computing),  
+• GE: Social Science  Hardware 
+Root of 
+Trust (PUF)  AI for Hardware 
+Security  – 
+ML-based PUF 
+modelling and 
+attack simulation  
+3 Spring  • Domain Core : 
+(Quantum Algorithms), 
+Domain Core : 
+• (Parallel & Distributed 
+Quantum Computing ),  
+• Domain Elective :(×2),  
+• GE Elective  Atomic 
+Metrology 
+& 
+Gravimetry  AI for Quantum 
+Control  – 
+reinforcement 
+learning for 
+cold -atom 
+systems  
+4 Fall  • Final Year Project – I, 
+• Analysis of Algorithms 
+(Classical & Quantum),  
+• Domain Elective,  
+• Technical & Business 
+Writing,  
+• Entrepreneurship  Secure 
+Quantum 
+Networks  AI for Network 
+Security  – 
+anomaly 
+detection in 
+QKD  
+4 Spring  • Final Year Project – II,  
+• Ideology & Constitution of 
+Pakistan,  
+• Arts & Humanities 
+(Professional Practices),  
+• Civics & Community 
+Engagement  – Capstone 
+AI-Quantum 
+Project  
+ 
+9 | 23  
+ AI/ML Integration in Sentinel Electives  
+Each Sentinel elective now includes a dedicated AI/ML module, reflecting global rdirections:  
+Elective  AI/ML Module  Global Precedent  
+Hardware 
+Root of 
+Trust (PUF)  • ML-based PUF modelling ; 
+training classifiers to 
+distinguish real from modelled 
+PUFs;  
+• AI-driven attack simulation  • MIT “Secure Hardware Design” 
+uses ML for side -channel analysis;  
+• Harvard QSE programme explores 
+AI-assisted hardware 
+characterisation  
+Atomic 
+Metrology & 
+Gravimetry  • Reinforcement learning for 
+cold -atom control;  
+• AI-based optimisation of 
+MOT loading;  
+• neural -network -assisted 
+real -time noise cancellation  • ETH Zurich teaches RL for 
+quantum control;  
+• Stanford APPPHYS 228 (Quantum 
+Hardware) includes AI for 
+quantum sensing;  
+• TU Delft has a dedicated course 
+on RL for quantum devices  
+Secure 
+Quantum 
+Networks  • AI-based anomaly detection 
+for QKD networks;  
+• deep learning for 
+eavesdropper localisation;  
+• neural -network error 
+correction for quantum 
+repeaters  • QuTech (Delft) runs AI -assisted 
+QKD post -processing;  
+• Harvard QSE includes quantum 
+network security modules;  
+• MIT 6.4530 covers ML for quantum 
+error mitigation  
+ 
+The AI -Driven Advantage  
+The AI/ML components are fully integrated into the Sentinel electives. This mirrors the approach 
+of leading programmes:  
+Tsinghua’s Center for Quantum Information conducts research on “Quantum artificial 
+intelligence, quantum information and computation, topological phases of matter” and 
+physical implementations (ion traps, neutral atoms, superconducting circuits).    
+Harvard’s Quantum Science and Engineering initiative explicitly trains researchers who need 
+“deep knowledge of science  and  engineering principles” , a dual competence that the Sentinel 
+AI modules help to build.    
+Berkeley’s quantum chip design course proves that hardware -level education is now feasible at 
+the undergraduate level.   
+The proposed plan an  enhancement  of the existing NCQC BSQC scheme, adding three 
+specialised electives and their associated labs , just as Tsinghua adds specialisations after the 
+10 | 23  
+ first academic year,   and just as top US universities offer quantum tracks within broader 
+engineering degrees.  
+  
+11 | 23  
+ 4. MS in Quantum Systems Engineering (MS -QSE):  
+     Advanced Infrastructure  
+The MS in Quantum Systems Engineering (MS -QSE) is a two -year (30 -credit) programme 
+designed for students who already have a BS in physics, computer science, electrical 
+engineering, or a related field. The goal is to move graduates from pure simulation 
+to hands -on hardware interfacing, infrastructure design, and security engineering . The 
+curriculum is built around two tiers: a computational foundation that leverages HPC 
+and the NCQC laboratory, and two strategic research nodes , Atomic Metrology & 
+Gravimetry, and Hardware Characterisation & Root of Trust.  
+ 
+The Transition from Simulation to Hardware Interfacing : 
+A real quantum engineer must be able to connect a cryostat, tune a laser, or extract a 
+PUF response from a raw chip. The MS -QSE closes that gap.  
+The programme recognises that  Pakistan cannot import every quantum technician . We 
+must train our own people to maintain, calibrate, and secure quantum hardware. The 
+transition is organised in three phases:  
+Phase  Focus  Location  Example Activity  
+1 Computational 
+foundations  HPC cluster, 
+NCQC lab  • Simulate a 10 -qubit GHZ 
+state on a high -performance 
+node;  
+• benchmark Qiskit vs Cirq  
+2 Hardware 
+interfacing  Atomic 
+Metrology Lab 
+(MOT/UHV)  • Build a simulated 
+magneto -optical trap;  
+• analyse real gravimeter data  
+3 Root -of-trust 
+engineering  PUF Lab 
+(AWG/cryo)  • Characterise simulated PUF 
+responses;  
+• design an authentication 
+protocol for a quantum 
+network  
+ 
+ 
+ 
+12 | 23  
+ Each phase includes a lab component that uses real equipment where available, and 
+high -fidelity simulation where hardware is not yet deployed. This mirrors the approach 
+of leading programmes such as the  MIT Quantum Engineering  track, the  QuTech 
+MSc  (Delft), and the  ETH Zurich Quantum Engineering  master.  
+ 
+Tier 1: Computational Foundations – HPC & NCQC Laboratory  
+The first tier provides students with the computational infrastructure needed to design 
+and test quantum protocols at scale. It is built around two facilities:  
+A. High -Performance Computing (HPC) Cluster  
+• Purpose:  Run large -scale simulations of quantum circuits, noise models, and 
+quantum networks (up to 30 –40 qubits using state -vector simulators; many 
+more using tensor -network methods).  
+• Infrastructure:  Existing HPC nodes at UET Lahore/Narowal, augmented with 
+GPU accelerators (NVIDIA A100 or equivalent) for machine -learning -assisted 
+quantum simulations.  
+• Software stack:  Qiskit, Cirq, NetSquid, PennyLane, and custom Python libraries 
+for AI -driven error mitigation.  
+B. NCQC Quantum Computing Laboratory  
+• Purpose:  Provide cloud access to real quantum hardware (IBM Quantum, Origin 
+Wuyuan, and future local testbeds) and a local emulation environment.  
+• Infrastructure:  Dedicated workstations with Jupyter hubs, version control (Git), 
+and a shared repository of verified quantum circuits.  
+• Learning outcomes:  Students learn to submit jobs to remote quantum 
+processors, analyse measurement results, and account for noise in real 
+hardware.  
+Courses in Tier 1 (two core courses):  
+Course  Description  Lab Component  
+Advanced 
+Quantum 
+Simulation  State -vector,  
+density matrix, and 
+tensor -network methods;  
+noise modelling; 
+parallelisation on HPC 
+clusters.  Run a 25 -qubit random circuit 
+simulation on HPC; benchmark 
+against a real 5 -qubit IBM device.  
+13 | 23  
+ Course  Description  Lab Component  
+Quantum 
+Computing with 
+Real Hardware  Transpilation,  
+calibration,  
+error mitigation; 
+accessing IBM and Origin 
+hardware via APIs; 
+handling limited qubit 
+connectivity.  Implement the RAQT protocol on IBM 
+Quantum and on Origin Wuyuan; 
+compare success rates.  
+ 
+These courses are directly informed by the  USTC quantum information 
+science  programme and the  Harvard QSE  core.  
+ 
+Tier 2: Strategic Research Nodes  
+The second tier consists of two specialised research nodes, each equipped with 
+simulation tools and (in future) physical hardware. Students choose one node as their 
+primary specialisation.  
+ 
+A. Atomic Metrology & Gravimetry Lab (MOT/UHV)  
+Mission:  Train engineers to build and operate cold -atom systems for precision sensing 
+– gravimeters, gyroscopes, and magnetometers. These are the building blocks of 
+gravity -locked navigation (GPS -denied environments).  
+Infrastructure (planned):  
+• Magneto -Optical Trap (MOT) kits (e.g., from ColdQuanta, TOPTICA, or 
+home -built).  
+• Ultra -High Vacuum (UHV) chamber with ion pump and titanium sublimation 
+pump.  
+• Tunable diode lasers (780 nm for rubidium, or 589 nm for sodium).  
+• CCD camera and photodetectors for fluorescence imaging.  
+• Control electronics (PID controllers, arbitrary waveform generators).  
+Learning outcomes:  
+• Design and align a MOT (simulated initially, then on a table -top setup).  
+• Measure the temperature of trapped atoms via time -of-flight imaging.  
+14 | 23  
+ • Operate a Mach –Zehnder atom interferometer and extract gravity 
+acceleration  *g*.  
+• Analyse noise sources (vibration, magnetic fields, laser frequency drift).  
+Laboratory exercises (simulated + hardware):  
+Lab  Activity  Tools  
+1 Simulate laser cooling: solve optical Bloch 
+equations for a two -level atom.  Python (QuTiP)  
+2 Design a MOT magnetic field profile 
+(anti -Helmholtz coils) using Biot -Savart.  Python / COMSOL 
+(basic)  
+3 Process real gravimeter data from an open 
+dataset (e.g., iXblue) to extract  *g*.  Python (pandas, scipy)  
+4 (Advanced) Build a small -scale rubidium MOT 
+demonstration (if funding allows).  Physical hardware  
+ 
+Connection to Sentinel Framework:   
+This node directly supports the  Atomic Metrology & Gravimetry  elective in the BSQC 
+programme and provides a research environment for MS theses.  
+Global equivalents:   
+MIT’s “Atomic Physics” lab course, ETH Zurich’s “Quantum Sensors” practical, and 
+the QUESTING  doctoral network (European quantum internet training) all include 
+cold -atom gravimetry modules.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+15 | 23  
+ 5. Technical Accreditation & Global Benchmarking  
+A modern quantum engineering programme must be recognised by professional bodies 
+and aligned with international standards. The proposed BSQC and MS -QSE 
+programmes are designed to meet the accreditation requirements of the  Pakistan 
+Engineering Council (PEC)  and to be consistent with the  Washington Accord  for 
+mutual recognition of engineering degrees.  
+Accreditation Strategy  
+Level  Target  Rationale  
+BSQC  PEC (Pakistan 
+Engineering 
+Council)  All engineering programmes in Pakistan must be 
+accredited by PEC for graduates to register as 
+professional engineers. The curriculum follows the 
+HEC -approved generic structure for computing 
+degrees.  
+MS-QSE  Not separately 
+accredited  Master’s programmes typically do not require 
+engineering accreditation; however, the degree will be 
+recognised by HEC and international universities for 
+PhD admission.  
+ 
+Alignment with Washington Accord Graduate Attributes  
+The Washington Accord defines 12 graduate attributes for professional engineers. The 
+Sentinel -enhanced BSQC programme explicitly addresses each attribute. Key 
+examples:  
+Attribute  How BSQC Delivers  Sentinel Contribution  
+Engineering Knowledge  • Mathematics,  
+• physics,  
+• quantum mechanics,  
+• computing core  • PUF,  
+• metrology,  
+• secure networks provide 
+hardware -level 
+knowledge  
+Problem Analysis  • Quantum 
+algorithms,  
+• error correction,  AI/ML modules for anomaly 
+detection in QKD  
+16 | 23  
+ Attribute  How BSQC Delivers  Sentinel Contribution  
+• noise modelling  
+Design/Development of 
+Solutions  Capstone projects, lab 
+courses  Sentinel electives require 
+designing a 
+PUF-authenticated network 
+or a cold -atom gravimeter 
+simulation  
+Investigation  Final -year research 
+project  Thesis -level investigation in 
+MS-QSE  
+Modern Tool Usage  • Qiskit,  
+• Cirq,  
+• NetSquid,  
+• HPC clusters  Hands -on with real IBM and 
+Origin hardware  
+Ethics & Security  • Information Security 
+course,  
+• Professional Practices  Hardware root of trust and 
+quantum network security 
+modules explicitly address 
+security ethics  
+ 
+Benchmarking Against International Programmes  
+To ensure global competitiveness, the curriculum has been benchmarked against the 
+following programmes (as detailed in previous sections):  
+Institution  Programme  Key Features Adopted  
+Tsinghua 
+University  Yao Class 
+(Quantum 
+Information)  Tiered specialisation after foundational year; 
+strong AI integration  
+USTC  BS in Quantum 
+Information Science  Broad physics foundation; professional electives 
+in sensing, materials, and devices  
+17 | 23  
+ Institution  Programme  Key Features Adopted  
+MIT  Quantum 
+Engineering 
+(graduate track)  HPC simulation + hardware interfacing labs  
+QuTech 
+(Delft)  MSc Quantum 
+Information Science 
+& Technology  NetSquid simulation; quantum internet focus  
+Harvard  Quantum Science & 
+Engineering  Transition from physics to engineering; 
+hardware -focused courses  
+Stanford  APPPHYS 228 
+(Quantum 
+Hardware)  Quantum sensing, control, and hardware 
+characterisation  
+ETH Zurich  Quantum 
+Engineering MSc  Cold -atom sensing; quantum control with AI  
+ 
+The Sentinel Framework’s three electives directly correspond to courses taught in these 
+top programmes, ensuring that NCQC graduates are competitive for international 
+research positions and industry roles.  
+Professional Certifications  
+Students are encouraged to earn industry -recognised certifications as part of their 
+degree:  
+Certification  Provider  Relevance  
+Qiskit Global Summer School 
+Certificate  IBM Quantum  Foundational and 
+advanced quantum 
+programming  
+Cirq / TensorFlow Quantum Training  Google  Quantum machine 
+learning  
+18 | 23  
+ Certification  Provider  Relevance  
+NetSquid Tutorial Certificate  QuTech  Quantum network 
+simulation  
+Quantum Hardware Security 
+(future)  NCQC / 
+Sentinel  Custom certification for 
+PUF and metrology  
+ 
+These certifications are listed as “Elective Supporting Courses” (3 credits) in the BSQC 
+scheme of study.  
+ 
+  
+19 | 23  
+ 6. Faculty Development & Training Roadmap  
+The success of the Sentinel Framework depends on having faculty who are confident 
+teaching quantum hardware, security, and AI/ML integration. Currently, Pakistan has a 
+very small pool of quantum -trained academics. This roadmap outlines a phased 
+approach to  build that capacity.  
+ 
+Phase 1: Foundations & Tool Fluency (Months 1 –6) 
+Goal:  Enable faculty to teach the core quantum courses (algorithms, programming, 
+cryptography) using existing simulators and cloud -based hardware.  
+Activity  Deliverable  Partners / Resources  
+Train the trainer 
+workshops (online)  Faculty complete Qiskit Global 
+Summer School and Cirq tutorials  IBM Quantum, Google 
+Quantum AI  
+NetSquid training for 
+quantum networks  Faculty can simulate RAQT and 
+basic QKD networks  QuTech (online resources)  
+Establish 
+peer -learning group  Weekly journal club and 
+code -review session  NCQC internal  
+Expected outcome:  5–8 faculty members proficient in teaching BSQC core courses.  
+ 
+Phase 2: Specialised Hardware Operations (Months 7 –12) 
+Goal:  Prepare faculty to teach the Sentinel electives (PUF, Atomic Metrology, Secure Quantum 
+Networks) and to supervise student labs.  
+Elective  Training Activity  Resource Provider  
+PUF (Hardware 
+Root of Trust)  Online course “Secure Hardware Design” 
+(MIT OpenCourseWare) + lab tutorials 
+from QuantumPUF project  MIT OCW, EIC Pathfinder  
+Atomic Metrology  Virtual lab on cold -atom systems (e.g., 
+QuVis simulations) + guest lecture from a 
+cold -atom researcher  University of Strathclyde, ETH 
+Zurich (recorded lectures)  
+20 | 23  
+ Elective  Training Activity  Resource Provider  
+Secure Quantum 
+Networks  NetSquid advanced tutorials;  
+hands -on with IBM Quantum’s Qiskit 
+Runtime  QuTech, IBM Quantum  
+ 
+Expected outcome:  3 - 4 faculty members can each teach one Sentinel elective and supervise 
+student projects.  
+ 
+Phase 3: Deep -Tech Innovation & Global Research (Months 13 –18) 
+Goal:  Enable faculty to conduct original research in quantum infrastructure, publish in 
+international journals, and attract research funding.  
+Activity  Deliverable  Partners  
+Faculty exchange / virtual visiting 
+scholar  Joint research project 
+with QuTech, MIT, or 
+Tsinghua  NCQC, HEC 
+(funding)  
+Establish a research group in 
+quantum security  First student 
+publications on PUF 
+or RAQT variants  Sentinel 
+Framework  
+Apply for international grants (EU, 
+ICTP, OQI)  At least one funded 
+project proposal 
+submitted  CERN OQI, QIA  
+Expected outcome:  NCQC becomes a recognised research node in quantum 
+infrastructure security.  
+ 
+Timeline Summary  
+Phase  Duration  Key Milestone  
+Phase 1  Months 1 –6 All core faculty certified in Qiskit/Cirq  
+21 | 23  
+ Phase  Duration  Key Milestone  
+Phase 2  Months 7 –12 Three Sentinel electives taught for the first 
+time  
+Phase 3  Months 13 –18 First research publication and grant 
+application submitted  
+   
+Budget Estimate (Faculty Development)  
+Item  Estimated 
+Cost 
+(PKR)  Source  
+Online course subscriptions (Coursera, edX)  Subject to 
+Currency 
+Rate  HEC / NCQC  
+Visiting faculty honorarium (virtual)  Subject to 
+Currency 
+Rate  NCQC  
+Conference travel (1 international / year)  Subject to 
+Currency 
+Rate  HEC / PSF  
+Laboratory equipment (MOT demo kit, AWG, 
+cryo -amplifier)  Subject to 
+Currency 
+Rate  PSDP / special 
+grant  
+ 
+Total approximate : Modest compared to the cost of importing hardware expertise.  
+ 
+  
+22 | 23  
+ 7. Implementation Timeline & Estimated Investment  
+ 
+Milestone  Duration  Rough Cost (PKR)  
+Procurement of MOT kit, UHV chamber, 
+lasers  Subject to 
+Situa tion  Subject to Curren cy 
+Rates  
+Procurement of AWG, cryogenic 
+amplifiers  Subject to 
+Situa tion  Subject to Curren cy 
+Rates  
+Faculty training (workshops, online 
+courses)  Subject to 
+Situa tion  Subject to Curren cy 
+Rates  
+Full Sentinel Track launch  Subject to 
+Situa tion  Subject to Curren cy 
+Rates  
+ 
+Risk mitigation:  Import delays , use simulated labs initially; lack of trained faculty , 
+partner with international online courses and virtual guest lectures.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+23 | 23  
+ 8. Concluding Statement: Physics of Trust  
+The Sentinel Framework is a concrete, evidence ‑based roadmap to equip Pakistan’s 
+quantum workforce with the skills to secure national infrastructure, authenticate 
+quantum devices, and sense the environment with cold ‑atom precision. The framework 
+builds on already ‑validated work – RAQT, “Quantum for All”, and the PUF module – and 
+aligns with the best practices of Tsinghua, MIT, QuTech, and Harvard.  
+By adopting the Sentinel electives, establishing the two specialised labs, and investing 
+in faculty development, NCQC will produce engineers who can protect Pakistan’s 
+digital sovereignty at the physical layer. This is where the quantum race will be won or  
+lost. And this is where Pakistan can leap ahead  not by importing technology, but by 
+building our own capability, on our own terms.  
+ 
+Respectfully submitted,  
+ 
+Noor  Ul Ain Faisal  
+IBM Qiskit Advocate | Q System Architect | Friend of OQI (CERN)   
+Lead, “Quantum for All” Curriculum (IBM QAMP 2025)  
+GitHub: learningdungeon  
+Repository: qamp -2025  
+ 
+ 
+ 
+ 
